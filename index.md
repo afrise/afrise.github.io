@@ -2,19 +2,23 @@ I am a software developer who enjoys learning new languages and staying up to da
 
 ## My Current Projects
 
-[Meer](/meer/index.md) <br>
+[Meer](/meer/index.md)<br> 
+`kotlin/Android`<br>
 An Android application to easily send your 
 current location to your friends.
 
-[iidxcon](/iidxcon/index.md)<br>
+[iidxcon](/iidxcon/index.md)<br> 
+`C++/Arduino`<br>
 Arduino software to emulate a specialized 
 video game controller
 
-[libGps](/libGps/index.md)<br>
+[libGps](/libGps/index.md)<br> 
+`kotlin/Android`<br>
 Kotlin library for accessing gps location 
 on android
 
-[BitPocket](/BitPocket/index.md)<br>
+[BitPocket](/BitPocket/index.md)<br> 
+`kotlin/JVM`<br>
 Program that generates bitcoin addresses then 
 checks their balance
 
