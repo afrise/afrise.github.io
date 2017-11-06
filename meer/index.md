@@ -5,3 +5,5 @@ Directions with your current location embedded into the hyperlink. Can be sent t
 supports plaintext, including Messaging, Facebook Messenger, Gmail, Hangouts, and many others. 
 
 [Go to the repository](https://github.com/afrise/meer)
+
+\[[home](https://afrise.github.io)\]
