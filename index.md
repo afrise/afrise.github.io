@@ -6,15 +6,15 @@ I am a software developer who enjoys learning new languages and staying up to da
 An Android application to easily send your 
 current location to your friends.
 
-[iidxcon](https://github.com/afrise/iidxcon)<br>
+[iidxcon](/iidxcon/index.md)<br>
 Arduino software to emulate a specialized 
 video game controller
 
-[libGps](https://github.com/afrise/libGps)<br>
+[libGps](/libGps/index.md)<br>
 Kotlin library for accessing gps location 
 on android
 
-[BitPocket](https://github.com/afrise/BitPocket)<br>
+[BitPocket](/BitPocket/index.md)<br>
 Program that generates bitcoin addresses then 
 checks their balance
 
