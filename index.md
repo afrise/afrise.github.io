@@ -1,4 +1,3 @@
-## About Me
 I am a software developer who enjoys learning new languages and staying up to date on new technologies. I have many projects at various levels of completion, and I've put a few here. 
 
 ## My Current Projects
@@ -20,5 +19,6 @@ Program that generates bitcoin addresses then
 checks their balance
 
 ## Contact
+
 I can be reached via [email](mailto:afrise@gmail.com), or InMail on [Linkedin](https:linkedin.com/in/afrise).
 
