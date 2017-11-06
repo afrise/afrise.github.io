@@ -1,3 +1,3 @@
-# masterdbugger.github.io
+# afrise.github.io
 
-http://masterdbugger.github.io
+http://afrise.github.io
