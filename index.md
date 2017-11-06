@@ -2,7 +2,7 @@ I am a software developer who enjoys learning new languages and staying up to da
 
 ## My Current Projects
 
-[Meer](https://github.com/afrise/meer) <br>
+[Meer](/meer/index.md) <br>
 An Android application to easily send your 
 current location to your friends.
 
