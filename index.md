@@ -20,5 +20,4 @@ checks their balance
 
 ## Contact
 
-I can be reached via [email](mailto:afrise@gmail.com), or InMail on [Linkedin](https:linkedin.com/in/afrise).
-
+I can be reached via [email](mailto:afrise@gmail.com), or InMail on [Linkedin](https://linkedin.com/in/afrise).
