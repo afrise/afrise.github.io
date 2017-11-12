@@ -4,7 +4,8 @@ to date on new technologies. I am constantly working on personal projects
 to keep myself on my toes, and I have uploaded a handful of them here, on github. 
 
 ```
-"Measuring programming progress by lines of code is like measuring aircraft building progress by weight."
+"Measuring programming progress by lines of code is like
+measuring aircraft building progress by weight."
 — Bill Gates
 ``` 
 ## Projects:
