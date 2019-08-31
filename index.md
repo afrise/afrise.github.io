@@ -26,6 +26,9 @@ data in android applications
 Program that generates bitcoin addresses then 
 checks their balance. 
 
+[ArcadeRCS](/ArcadeRCS/index.md) `C#/Windows`<br>
+Remote interface to choose game to launch at boot
+
 ## Contact:
 
 I can be reached via [email](mailto:afrise@gmail.com), or InMail on [Linkedin](https://linkedin.com/in/afrise).
