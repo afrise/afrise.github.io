@@ -13,6 +13,10 @@ body{
     width:100%;
     
 }
+
+.navigation{
+    font-size: 12pt;
+}
 .description {
     width:100%;
 }

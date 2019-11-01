@@ -5,8 +5,15 @@
     </head>
     <body>
         <div class="list" id="list">
+            <div>
                 <input type="button" @click="AddNote" value="Add Note" />
-                <input type="button" @click="Back" value="Back" /><br>
+                <input type="button" @click="Back" value="Back" />
+                <span class="navigation" v-for="(note, index) in Navigation">
+                    <a v-if="note.Title!=''" @click="GetNote(note.Id)">{{note.Title}}</a>
+                    <a v-else @click="GetNote(note.Id)">...</a>
+                    <span v-if="index != Navigation.length - 1"> / </span>
+                </span>
+            </div>
             <input type="text" class="title" placeholder="[Add Title]" v-model="CurrentNote.Title" /><br>
             <textarea id="description" class="description"  
                 @keyup="AutoGrow()" v-model="CurrentNote.Description"></textarea>

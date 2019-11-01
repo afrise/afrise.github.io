@@ -1,11 +1,3 @@
-/*
-TODO: 
-- allow editing/removal of nodes
-- show node path in title
-- add option to save/import notepads (as json file)
-*/
-
-//build base model: todo: cleanup
 let DefaultNote = {Id: 0, Title: "My Notes", Description:""};
 var model = {
     CurrentNote: DefaultNote,
@@ -32,6 +24,21 @@ var NoteList = new Vue({
                     children.push(note);
         });
             return children;
+        },
+        Navigation: function(){
+            let array = [];
+            let note = this.CurrentNote;
+            array.push(note);
+            while (note.Id != 0) {
+                this.NoteList.forEach(note1 =>  {
+                    if (note1.Id==note.ParentId){
+                        note = note1;
+                    }
+                });
+                array.push(note);
+            }
+            array.reverse();
+            return array;
         }
     },
     watch: {
@@ -58,7 +65,7 @@ var NoteList = new Vue({
         },
         AddNote: function(){
             this.MaxId++;
-            this.NoteList.push({ParentId: this.CurrentNote.Id, Id:this.MaxId, Title: "empty", Description: ""});
+            this.NoteList.push({ParentId: this.CurrentNote.Id, Id:this.MaxId, Title: "", Description: ""});
         },
         DeleteNote: function (noteId) {
             this.NoteList.forEach(note =>  {
@@ -80,8 +87,10 @@ var NoteList = new Vue({
 function AutoGrow() {
     setTimeout(() =>{
         let element=document.getElementById("description");
-        element.style.height = "5px";
-        element.style.height = (element.scrollHeight)+"px";
+        if (element){
+            element.style.height = "5px";
+            element.style.height = (element.scrollHeight)+"px";
+        }
     },1);
 }
 
