@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta property = "og:title" content="Allen Frise: Portfolio"/>
+        <meta property = "og:description" content="I am a software developer from Richmond, VA with a passion for building software to make life easier."/>
+        <meta property = "og:image" content=""/>
+        <meta property = "og:url" content="http://dbgr.tech/portfolio"/>
+        <meta property = "og:type" content="website"/>
+        <title>Allen Frise</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body id="body">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+            <a class="navbar-brand" href="#">{a}</a>    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" id="toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" data-trigger-button="#toggler" href="#about"    >About</a></li>
+                    <li class="nav-item"><a class="nav-link" data-trigger-button="#toggler" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" data-trigger-button="#toggler" href="#resume"   >Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" data-trigger-button="#toggler" href="#contact"  >Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container"><br><br><br>
+            <div class="title">Allen Frise<div class="subtitle">Software Developer</div></div><br><br><br>
+            <div class = "jumbotron" id="about-data"><h2>About</h2><a id="about"></a><br>{{about}}<br><br>
+                Some technologies I have experience with:<div v-for="technology in technologies">- {{technology}}</div><br>
+            </div>
+            <div class = "jumbotron">
+                <div class = "container container-fluid">
+                    <h2 >Portfolio</h2><a id="portfolio"></a><br>
+                    Below are listed some of the projects that are available on my github:<br><br>
+                    <div id="projects">
+                        <div class="card-columns" >
+                            <div class="card"  v-for="project in projects">        
+                                <div class="card-body"><h5 class="card-title">{{project.name}}</h5><p class="card-text">{{project.description}}</p><span class="badge" v-for="tech in project.tech">{{tech}}</span></div>
+                                <div class="card-footer text-center"><a v-bind:href="'http://github.com/afrise/'+project.url" class="btn btn-primary">view on github</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="jumbotron">
+                <h2>Resume</h2><a id="resume"></a><br>
+                <div id="resume-data">
+                    <h4>{{name}}</h4><br><b><u>Summary:</u></b><br><p>{{summary}}</p><br>
+                    <b><u>Professional Skills:</u></b>
+                    <div v-for="skill in skills">- {{skill}}</div><br><br>
+                    <b><u>Education:</u></b>
+                    <div v-for='education in educations'>{{education.school}}<br><i>{{education.major}} | {{education.tenure}}</i></div><br><br>
+                    <b><u>Professional Experience:</u></b>
+                    <div v-for="experience in experiences">
+                        {{experience.title}}<br><i>{{experience.name}}</i><br><span>{{experience.location}} | {{experience.tenure}}</span>
+                        <div v-for="responsibility in experience.responsibilities">- {{responsibility}}</div><br>
+                    </div>
+                </div><br>
+                <div class="text-center"><a onclick="GetPdf()" class="btn btn-primary">download PDF</a></div>
+                <div class="text-center"><i>generated with <a href="https://parall.ax/products/jspdf">jsPDF</a></i></div>
+            </div>
+            <div class="jumbotron">
+                <h2>Contact</h2><a id="contact"></a><br>
+                Email: <a href="mailto:afrise@gmail.com">afrise@gmail.com</a><br>
+                Linkedin: <a href="https:/linkedin.com/in/afrise">afrise</a>
+            </div>
+        </div>
+        <footer>
+            <div class="text-center">&copy; 2019 Allen Frise. Built using <a href="https://getbootstrap.com">Bootstrap</a> and <a href="https://vuejs.org">Vue.js</a></div><br>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+        <script src="js/from_html.js"></script>
+        <script src="js/css_colors.js"></script>
+        <script src="js/site.js"></script>
+    </body>
+</html>
