@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Notes</title>
+        <link rel="stylesheet" href="notes.css">
+    </head>
+    <body>
+        <div class="list" id="list">
+                <input type="button" @click="AddNote" value="Add Note" />
+                <input type="button" @click="Back" value="Back" /><br>
+            <input type="text" class="title" placeholder="[Add Title]" v-model="CurrentNote.Title" /><br>
+            <textarea id="description" class="description"  
+                @keyup="AutoGrow()" v-model="CurrentNote.Description"></textarea>
+            <div v-for="note in ChildNotes">&nbsp;&nbsp;&bull; 
+                <a @click="DeleteNote(note.Id)">[x]</a>
+                <a @click="GetNote(note.Id)">[...]</a>
+                <input type="text" class="listItem" placeholder="[Add Title]" v-model="note.Title" />
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="notes.js"></script>
+    </body>
+</html>
