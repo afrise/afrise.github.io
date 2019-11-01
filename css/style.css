@@ -4,6 +4,7 @@
     top: -100px;
 }
 
+.navbar {background:darkslategray}
 .card {
     box-shadow: 5px 5px 5px #0002;
     border-color: #444;
