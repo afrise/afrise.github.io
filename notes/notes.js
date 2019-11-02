@@ -1,4 +1,4 @@
-let DefaultNote = {Id: 0, Title: "NestPad", Description:"Press [x] to delete; press [...] to dive into the note! The title and desription can be edited on any note, and the Add Note button will add a new bullet point. You can also Save and Load your notes in JSON format! "};
+let DefaultNote = {Id: 0, Title: "NestPad", Description:"Everthing here is editable, and will save automatically! Have fun!"};
 var model = {
     CurrentNote: DefaultNote,
     NoteList: [DefaultNote, {Id:1, ParentId: 0, Title: "Bullet Point"}],
