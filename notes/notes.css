@@ -1,22 +1,24 @@
-input {
-    border: 0;
-    padding: 5px;
-}
 input:focus {outline:0;}
-input[type=button]{
-    padding: 5px 10px;
-    font-size:12pt;
-    box-shadow: 2px 2px 5px #0001;
-    background: #fff;
-    margin:5px 0;
-    border-radius: 4px;
-    border:1px solid #0004;
-    
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+input[type=text] {border:0;background:inherit}
+textarea{background:inherit}
 input[type=button]:hover{
     background: cadetblue;
 }
+.icon {
+    height:32px;
+    width:32px;
+    padding: 5px;
+    border-radius:4px;
+}
+.icon:hover{
+    border: 1px solid #0005;
+    background: #0001;
+}
+.icons {
+    padding:0;
+    min-width:120px;
+}
+
 body{
     text-align: center;
     background:slategray;
@@ -32,7 +34,7 @@ body{
 .description {
     width:100%;
 }
-.list {
+.list1 {
     margin: 25px auto;
     width:80vw;
     max-width:800px;
@@ -44,9 +46,12 @@ body{
     box-shadow: 5px 5px 5px #0003;
     font-size:18pt;
 }
+.note{
+    width:100%-120px
+}
 .listItem {
     font-size:18pt;
-    width:80%;
+    width:100%;
 }
 ul {
     width: fit-content;
