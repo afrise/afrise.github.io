@@ -24,16 +24,16 @@
                     <img class="icon" @click="AddNote" src="img/paper_3_add.svg" />
                     <img class="icon" @click="Back" src="img/arrow_back_1.svg" />
                 </div>
-                <input type="text" class="title" placeholder="[Add Title]" @keyup="Save" v-model="CurrentNote.Title" /><br>
+                <input type="text" class="title" placeholder="[Add Title]" @keyup="Save()" v-model="CurrentNote.Title" /><br>
                 <textarea id="description" class="description"  
                     @keyup="AutoGrow();Save()" v-model="CurrentNote.Description"></textarea>
                 <div class="d-flex" v-for="note in ChildNotes">
                     <div class="icons text-right">
                         <a @click="DeleteNote(note)"><img class="icon" src="img/delete_1.svg" /></a>
                         <a @click="SetCurrentNote(note)"><img class="icon" src="img/paper_3.svg" /></a>
-                        <a><img class="icon" src="img/eye_1.svg" /></a>
+                        <a><img style="display:none" class="icon" src="img/eye_1.svg" /></a>
                     </div>
-                    <div class="note text-left"><input type="text" class="listItem" placeholder="[Add Title]" v-model="note.Title" @keyup="Save"/></div>
+                    <div class="note text-left"><input type="text" class="listItem" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()"/></div>
                 </div>
             </div>
         </div>

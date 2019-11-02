@@ -30,7 +30,7 @@ var NoteList = new Vue({
             array.reverse();
             return array;
         },
-        MaxId: function(){return this.NoteList.sort(function(a,b){return b.Id-a.Id})[0].Id;}
+        MaxId: function(){return this.NoteList.sort(function(a,b){return a.Id-a.Id})[this.NoteList.length-1].Id;}
     },
     watch: {
         CurrentNote: ()=>{
@@ -43,7 +43,7 @@ var NoteList = new Vue({
         GetParent: function(note){return this.NoteList.filter(function(n){return n.Id==note.ParentId})[0];},
         GetChildren: function(note){return this.NoteList.filter(function(n){return n.ParentId==note.Id});},
         Back: function () {if (this.CurrentNote.Id != 0)this.SetCurrentNote(this.GetParent(this.CurrentNote));},
-        AddNote: function(){this.NoteList.push({ParentId: this.CurrentNote.Id, Id:this.MaxId+1, Title: "", Description: ""});},
+        AddNote: function(){this.NoteList.push({Id:this.MaxId+1, ParentId: this.CurrentNote.Id, Title: "", Description: ""});},
         SetCurrentNote: function(note){this.CurrentNote=note},
         Save: function() {
             localStorage.model = JSON.stringify({
