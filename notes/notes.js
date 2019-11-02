@@ -1,7 +1,7 @@
-let DefaultNote = {Id: 0, Title: "My Notes", Description:""};
+let DefaultNote = {Id: 0, Title: "NestPad", Description:"Press [x] to delete; press [...] to dive into the note! The title and desription can be edited on any note, and the Add Note button will add a new bullet point. You can also Save and Load your notes in JSON format! "};
 var model = {
     CurrentNote: DefaultNote,
-    NoteList: [DefaultNote],
+    NoteList: [DefaultNote, {Id:1, ParentId: 0, Title: "Bullet Point"}],
     MaxId: 0
 }
 
@@ -14,32 +14,23 @@ var NoteList = new Vue({
     data: {
         CurrentNote: model.CurrentNote,
         NoteList: model.NoteList,
-        MaxId: model.MaxId
     },
     computed: {
         ChildNotes: function() {
-            let children = [];
-            this.NoteList.forEach(note =>  {
-                if (note.ParentId == this.CurrentNote.Id)
-                    children.push(note);
-        });
-            return children;
+            return this.GetChildren(this.CurrentNote);
         },
         Navigation: function(){
             let array = [];
             let note = this.CurrentNote;
             array.push(note);
             while (note.Id != 0) {
-                this.NoteList.forEach(note1 =>  {
-                    if (note1.Id==note.ParentId){
-                        note = note1;
-                    }
-                });
+                note = this.GetParent(note);
                 array.push(note);
             }
             array.reverse();
             return array;
-        }
+        },
+        MaxId: function(){return this.NoteList.sort(function(a,b){return b.Id-a.Id})[0].Id;}
     },
     watch: {
         CurrentNote: ()=>{
@@ -49,6 +40,11 @@ var NoteList = new Vue({
         NoteList: ()=>{NoteList.Save()}
     },
     methods: {
+        GetParent: function(note){return this.NoteList.filter(function(n){return n.Id==note.ParentId})[0];},
+        GetChildren: function(note){return this.NoteList.filter(function(n){return n.ParentId==note.Id});},
+        Back: function () {if (this.CurrentNote.Id != 0)this.SetCurrentNote(this.GetParent(this.CurrentNote));},
+        AddNote: function(){this.NoteList.push({ParentId: this.CurrentNote.Id, Id:this.MaxId+1, Title: "", Description: ""});},
+        SetCurrentNote: function(note){this.CurrentNote=note},
         Save: function() {
             localStorage.model = JSON.stringify({
                 CurrentNote: this.CurrentNote,
@@ -56,30 +52,31 @@ var NoteList = new Vue({
                 MaxId: this.MaxId
             });
         },
-        GetNote: function(noteId) {
-            this.NoteList.forEach(note =>  {
-                if (note.Id==noteId){
-                    this.CurrentNote = note;
-                }
-            });
+        DeleteNote: function (note) {
+            let children = this.GetChildren(note);
+            children.forEach(child => this.DeleteNote(child));
+            this.NoteList.splice(this.NoteList.indexOf(note),1);
         },
-        AddNote: function(){
-            this.MaxId++;
-            this.NoteList.push({ParentId: this.CurrentNote.Id, Id:this.MaxId, Title: "", Description: ""});
+        Export: function () {
+            var pom = document.createElement('a');
+            pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(localStorage.model));
+            pom.setAttribute('download', 'notes.json');
+            pom.click();
         },
-        DeleteNote: function (noteId) {
-            this.NoteList.forEach(note =>  {
-                if (note.Id==noteId.toString()){
-                    this.NoteList.splice(this.NoteList.indexOf(note), 1);
-                }
-                if (note.ParentId == noteId.toString()){
-                    this.DeleteNote(note.Id);
-                }
-            });
-        },
-        Back: function () {
-            if (this.CurrentNote.Id != 0)
-                this.GetNote(this.CurrentNote.ParentId);
+        Import: function() {
+            let self=this;
+            document.getElementById("FileImport").click();
+            document.getElementById("FileImport").onchange = function() {
+                let reader = new FileReader();
+                reader.onload = function( ev ) {
+                    var contents = JSON.parse( decodeURIComponent( ev.target.result ) );
+                    self.CurrentNote=contents.CurrentNote;
+                    self.MaxId=contents.MaxId;
+                    self.NoteList=contents.NoteList;
+                 };
+                var file = this.files[0];
+                reader.readAsText(file);    
+            }
         }
     }    
 });

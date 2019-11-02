@@ -3,6 +3,20 @@ input {
     padding: 5px;
 }
 input:focus {outline:0;}
+input[type=button]{
+    padding: 5px 10px;
+    font-size:12pt;
+    box-shadow: 2px 2px 5px #0001;
+    background: #fff;
+    margin:5px 0;
+    border-radius: 4px;
+    border:1px solid #0004;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+input[type=button]:hover{
+    background: cadetblue;
+}
 body{
     text-align: center;
     background:slategray;
@@ -11,9 +25,7 @@ body{
 .title {
     font-size: 24pt;
     width:100%;
-    
 }
-
 .navigation{
     font-size: 12pt;
 }

@@ -6,21 +6,26 @@
     <body>
         <div class="list" id="list">
             <div>
+                <input type="button" @click="Export" value="Save" />
+                <label for="FileImport">
+                    <input type="button" @click="Import" value="Load" />
+                    <input type="file" style="display:none" id="FileImport" />
+                </label>
                 <input type="button" @click="AddNote" value="Add Note" />
                 <input type="button" @click="Back" value="Back" />
                 <span class="navigation" v-for="(note, index) in Navigation">
-                    <a v-if="note.Title!=''" @click="GetNote(note.Id)">{{note.Title}}</a>
-                    <a v-else @click="GetNote(note.Id)">...</a>
-                    <span v-if="index != Navigation.length - 1"> / </span>
+                    <a v-if="note.Title!=''" @click="SetCurrentNote(note)">{{note.Title}}</a>
+                    <a v-else @click="SetCurrentNote(note)">...</a>
+                    <span v-if="index != Navigation.length - 1"> > </span>
                 </span>
             </div>
-            <input type="text" class="title" placeholder="[Add Title]" v-model="CurrentNote.Title" /><br>
+            <input type="text" class="title" placeholder="[Add Title]" @keyup="Save()" v-model="CurrentNote.Title" /><br>
             <textarea id="description" class="description"  
-                @keyup="AutoGrow()" v-model="CurrentNote.Description"></textarea>
+                @keyup="AutoGrow();Save()" v-model="CurrentNote.Description"></textarea>
             <div v-for="note in ChildNotes">&nbsp;&nbsp;&bull; 
-                <a @click="DeleteNote(note.Id)">[x]</a>
-                <a @click="GetNote(note.Id)">[...]</a>
-                <input type="text" class="listItem" placeholder="[Add Title]" v-model="note.Title" />
+                <a @click="DeleteNote(note)">[x]</a>
+                <a @click="SetCurrentNote(note)">[...]</a>
+                <input type="text" class="listItem" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()"/>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
