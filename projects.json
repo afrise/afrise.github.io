@@ -1,12 +1,13 @@
 {
 	"projects": [
+		{"name": "Portfolio", "description": "the site you're looking at right now!", "url": "portfolio", "tech": ["html", "css", "js"]},
+		{"name": "NestPad", "description": "A Simple Client-Side only To-do list application. Allows nested to-do lists, and features the abilidy to save and load your lists.", "url": "notes", "tech": ["html", "css", "js"]},
 		{"name": "meer", "description": "android application that sends your current GPS coordinates to a friend using the share api in the form of a google maps link", "url": "meer", "tech":["java"]},
 		{"name": "libGps", "description": "android library written in kotlin to simplify getting gps info and permissions", "url": "libGps", "tech":["kotlin"]},
 		{"name": "ArcadeRcs", "description": "remote interface for home arcede cabinets to choose game to launch at boot", "url": "ArcadeRcs", "tech":["c#"]},
 		{"name": "IIDXCon", "description": "arduino software to emulate specialized input hardware", "url": "iidxcon", "tech":["c++", "arduino"]},
 		{"name": "BitPocket", "description": "generates bitcoin addresses then checks their balance.", "url": "bitpocket", "tech":["kotlin"]},
 		{"name": "Road Fighters 3D Shader", "description": "shader written for ReShade to convert from interlaced to Red/Cyan 3D", "url": "road-fighters-3d-shader", "tech":["ReShade"]},
-		{"name": "TegraAutoSmash", "description": "homebrew utility for nintendo switch that automatically injects payload upon connection to pc", "url": "tegraautosmash", "tech":["c#"]},
-		{"name": "Portfolio", "description": "the site you're looking at right now!", "url": "portfolio", "tech": ["html", "css", "js"]}
+		{"name": "TegraAutoSmash", "description": "homebrew utility for nintendo switch that automatically injects payload upon connection to pc", "url": "tegraautosmash", "tech":["c#"]}
 	]
 }
