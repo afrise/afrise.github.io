@@ -5,15 +5,25 @@ input[type=button]:hover{
     background: cadetblue;
 }
 
+a {color: #bbb}
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+.footer {
+    position: absolute;
+    bottom:5px;
+    width:100%;
+}
+
 .github{ 
     position:absolute;
     bottom:10px;
     right:10px;
     color:white;
     z-index:-1;
-}
-.github a {
-    color:white;
 }
 
 .icon {
@@ -35,6 +45,7 @@ body{
     text-align: center;
     background:slategray;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
 }
 .title {
     font-size: 24pt;
@@ -42,6 +53,7 @@ body{
 }
 .navigation{
     font-size: 12pt;
+    color: black;
 }
 .description {
     width:100%;
