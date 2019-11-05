@@ -3,6 +3,30 @@
     position: relative;
     top: -100px;
 }
+.contactIcon {
+    width: 64px;
+    height: 64px;
+    fill: white;
+    margin:5px;
+    border-radius:3px;
+    content-align: center;
+}
+
+.contactIcon:hover{
+    background: #fff3;
+}
+
+.svg{
+    fill: white;
+    width:64px;
+    height:64px;
+    margin:2px;
+}
+
+
+.LinkedIn:hover{fill: #2867B2;}
+.Gmail:hover{fill:#DB4437;}
+.Facebook:hover{fill:#4267B2;}
 
 .navbar {background:darkslategray}
 .card {

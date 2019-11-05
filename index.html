@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="ascii">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta property = "og:title" content="Allen Frise: Portfolio"/>
         <meta property = "og:description" content="I am a software developer from Richmond, VA with a passion for building software to make life easier."/>
@@ -30,7 +30,7 @@
         <div class="container"><br><br><br>
             <div class="title">Allen Frise<div class="subtitle">Software Developer</div></div><br><br><br>
             <div class = "jumbotron" id="about-data"><h2>About</h2><a id="about"></a><br>{{about}}<br><br>
-                Some technologies I have experience with:<div v-for="technology in technologies">&bull; {{technology}}</div><br>
+                Some technologies I have experience with:<div v-for="technology in technologies"> &bull; {{technology}}</div><br>
             </div>
             <div class = "jumbotron">
                 <div class = "container container-fluid">
@@ -51,22 +51,28 @@
                 <div id="resume-data">
                     <h4>{{name}}</h4><br><b><u>Summary:</u></b><br><p>{{summary}}</p><br>
                     <b><u>Professional Skills:</u></b>
-                    <div v-for="skill in skills">&#8226; {{skill}}</div><br><br>
+                    <div v-for="skill in skills"> &bull; {{skill}}</div><br><br>
                     <b><u>Education:</u></b>
                     <div v-for='education in educations'>{{education.school}}<br><i>{{education.major}} | {{education.tenure}}</i></div><br><br>
                     <b><u>Professional Experience:</u></b>
                     <div v-for="experience in experiences">
                         {{experience.title}}<br><i>{{experience.name}}</i><br><span>{{experience.location}} | {{experience.tenure}}</span>
-                        <div v-for="responsibility in experience.responsibilities">&bull; {{responsibility}}</div><br>
+                        <div v-for="responsibility in experience.responsibilities"> &bull; {{responsibility}}</div><br>
                     </div>
                 </div><br>
                 <div class="text-center"><a onclick="GetPdf()" class="btn btn-primary">download PDF</a></div>
                 <div class="text-center"><i>generated with <a href="https://parall.ax/products/jspdf">jsPDF</a></i></div>
             </div>
-            <div class="jumbotron">
+            <div class="jumbotron" id="contacts">
                 <h2>Contact</h2><a id="contact"></a><br>
-                Email: <a href="mailto:afrise@gmail.com">afrise@gmail.com</a><br>
-                Linkedin: <a href="https:/linkedin.com/in/afrise">afrise</a>
+                <div class="d-flex">
+                    <div v-for="link in Links" class="contactIcon">
+                        <a v-bind:href="link.Url">
+                            <svg class="svg" v-html="link.Vector" v-bind:class="link.HoverColor">
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <footer>

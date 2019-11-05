@@ -1,0 +1,35 @@
+{
+    "name": "Allen Frise",
+    "summary": "Creative full stack software developer with in-depth knowledge of object oriented languages, user interface design, database structuring, and debugging. Efficient and thorough programmer with the ability to think critically about the function and structure of every aspect of any project.",
+    "skills": [
+        "Programming in languages including C/C++/C#, Visual Studio, .NET, Java, CSS, Python",
+        "Ability to work independently and in groups",
+        "Scripting in PHP, SQL, HTML5, JavaScript",
+        "Debugging source code",
+        "Command line scripting in Linux and Windows",
+        "Troubleshooting software issues",
+        "Communicating with clients and coworkers to ensure effective delivery of product"],
+        "educations": [{"school": "J Sargeant Reynolds", "major": "Computer Science", "tenure": "2005-2008"}],
+    "experiences": [
+        {"name": "Computer Resource Company", 
+            "title": "Software Developer", 
+            "location": "Richmond, VA",
+            "tenure": "01/2018 - 06/2019", 
+            "responsibilities": [
+                "Lead developer on one of the most important products at the company", 
+                "Involved in all stages of deployment",
+                "Designed and implemented internal tooling and libraries",
+                "Refactored legacy code adding transparency and maintainability",
+                "Enhanced user experience by streamlining user workflow"
+            ]},
+        {"name": "Bow Wow Kittly, LLC", 
+            "title": "Software Developer / Database Administrator", 
+            "location": "Richmond, VA",
+            "tenure": "04/2010 - 12/2017", 
+            "responsibilities": [
+                "Set up relational database to store client information", 
+                "Designed secure, responsive web frontend to store client / billing information",
+                "Maintained and improved software as business requirements evolved"
+            ]}
+    ]
+}

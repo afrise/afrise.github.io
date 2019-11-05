@@ -1,4 +1,4 @@
-let DefaultNote = {Id: 0, Title: "NestPad", Description:"Everthing here is editable, and will save automatically! Have fun!"};
+let DefaultNote = {Id: 0, Title: "NestPad", Description:"Everything here is editable, and will save automatically! Have fun!"};
 var model = {
     CurrentNote: DefaultNote,
     NoteList: [DefaultNote, {Id:1, ParentId: 0, Title: "Bullet Point"}],
