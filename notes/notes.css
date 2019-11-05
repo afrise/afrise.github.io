@@ -38,7 +38,7 @@ a:hover {
 }
 .icons {
     padding:0;
-    min-width:120px;
+    width:120px;
 }
 
 body{
@@ -70,6 +70,7 @@ body{
     box-shadow: 5px 5px 5px #0003;
     font-size:18pt;
 }
+.note{width:100%}
 
 .listItem {
     font-size:18pt;
