@@ -1,4 +1,12 @@
-let DefaultNote = {Id: 0, Title: "NestPad", Description:"Everything here is editable, and will save automatically! Have fun!"};
+function Note(parentId) {
+    this.Title="";
+    this.Description="";
+    this.Completed=false;
+    this.ParentId=parentId;
+    this.Id=vm.MaxId+1;
+}
+
+let DefaultNote = {Id: 0, Title: "NestPad", Description:"Everything here is editable, and will save automatically! Have fun!", Completed: false};
 var model = {
     CurrentNote: DefaultNote,
     NoteList: [DefaultNote, {Id:1, ParentId: 0, Title: "Bullet Point"}],
@@ -11,14 +19,9 @@ else model = JSON.parse(localStorage.model);
 
 var vm = new Vue({
     el: "#list",
-    data: {
-        CurrentNote: model.CurrentNote,
-        NoteList: model.NoteList,
-    },
+    data: {CurrentNote: model.CurrentNote, NoteList: model.NoteList},
     computed: {
-        ChildNotes: function() {
-            return this.GetChildren(this.CurrentNote);
-        },
+        ChildNotes: function() { return this.GetChildren(this.CurrentNote);},
         Navigation: function(){
             let array = [];
             let note = this.CurrentNote;
@@ -27,8 +30,7 @@ var vm = new Vue({
                 note = this.GetParent(note);
                 array.push(note);
             }
-            array.reverse();
-            return array;
+            return array.reverse();
         },
         MaxId: function(){return this.NoteList.sort(function(a,b){return a.Id-a.Id})[this.NoteList.length-1].Id;}
     },
@@ -44,7 +46,7 @@ var vm = new Vue({
         GetParent: function(note){return this.NoteList.filter(function(n){return n.Id==note.ParentId})[0];},
         GetChildren: function(note){return this.NoteList.filter(function(n){return n.ParentId==note.Id});},
         Back: function () {if (this.CurrentNote.Id != 0)this.SetCurrentNote(this.GetParent(this.CurrentNote));},
-        AddNote: function(){this.NoteList.push({Id:this.MaxId+1, ParentId: this.CurrentNote.Id, Title: "", Description: ""});},
+        AddNote: function(){this.NoteList.push(new Note(this.CurrentNote.Id));},
         SetCurrentNote: function(note){this.CurrentNote=note},
         Save: function() {
             localStorage.model = JSON.stringify({
@@ -78,6 +80,10 @@ var vm = new Vue({
                 var file = this.files[0];
                 reader.readAsText(file);    
             }
+        },
+        ToggleCompleted: function(note) {
+            note.Completed=!note.Completed;
+            vm.Save();
         }
     }    
 });

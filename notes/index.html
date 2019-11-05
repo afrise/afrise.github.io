@@ -29,11 +29,14 @@
                     @keyup="AutoGrow();Save()" v-model="CurrentNote.Description"></textarea>
                 <div class="d-flex" v-for="note in ChildNotes">
                     <div class="icons text-right">
-                        <a @click="DeleteNote(note)"><img class="icon" src="img/delete_1.svg" /></a>
-                        <a @click="SetCurrentNote(note)"><img class="icon" src="img/paper_3.svg" /></a>
-                        <a><img style="display:none" class="icon" src="img/eye_1.svg" /></a>
+                        <a @click="DeleteNote(note)">     <img class="icon" src="img/delete_1.svg" /></a>
+                        <a @click="SetCurrentNote(note)"> <img class="icon" src="img/paper_3.svg"  /></a>
+                        <a @click="ToggleCompleted(note)"><img class="icon" src="img/accept_1.svg"    /></a><!--TODO: change icon for this-->
                     </div>
-                    <div class="note text-left"><input type="text" class="listItem" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()"/></div>
+                    <div class="note text-left">
+                        <input v-if="note.Completed" type="text" class="listItem Completed" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()"/>
+                        <input v-else type="text" class="listItem" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,7 +45,7 @@
         </div>
         <a href="https://github.com/afrise/notes">
             <div class="github">
-                view the source on github! <image src="img/github.png"
+                view the source on github! <image src="img/github.png">
             </div>
         </a>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
