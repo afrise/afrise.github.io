@@ -21,7 +21,6 @@
                         <img class="icon" @click="Import" src="img/cloud_up.svg" />
                         <input type="file" style="display:none" id="FileImport" />
                     </label>
-                    <img class="icon" @click="AddNote" src="img/paper_3_add.svg" />
                     <img class="icon" @click="Back" src="img/arrow_back_1.svg" />
                 </div>
                 <input type="text" class="title" placeholder="[Add Title]" @keyup="Save()" v-model="CurrentNote.Title" /><br>
