@@ -1,7 +1,7 @@
 body{text-align: center;background:slategray;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;}
 input:focus {outline:0;}
 input[type=text] {border:0;background:inherit;}
-input[type=text].Completed  {text-decoration:line-through;color:#888}
+input[type=text].completed  {text-decoration:line-through;color:#888}
 textarea{background:inherit}
 input[type=button]:hover{background: cadetblue;}
 ul {width: fit-content;text-align: left;margin: 0;}
@@ -21,3 +21,4 @@ a:hover {color: white;text-decoration: none;}
 .note{width:100%}
 .listItem {font-size:18pt;width:100%;}
 .noteCard {display:inline}
+.g-savetodrive {display:none}

@@ -84,6 +84,20 @@ var vm = new Vue({
         ToggleCompleted: function(note) {
             note.Completed=!note.Completed;
             vm.Save();
+        },
+        EnterPressed: function(note){
+            if (this.ChildNotes.indexOf(note)==this.ChildNotes.length-1) this.AddNote();
+            setTimeout(function(){
+                document.getElementById(vm.ChildNotes[vm.ChildNotes.indexOf(note)+1].Id).focus();
+            },1);
+        },
+        UpPressed: function(note){
+            if (this.ChildNotes.indexOf(note)>0)
+                document.getElementById(vm.ChildNotes[vm.ChildNotes.indexOf(note)-1].Id).focus();
+        },
+        DownPressed: function(note){
+            if (this.ChildNotes.indexOf(note)<this.ChildNotes.length-1)
+            document.getElementById(vm.ChildNotes[vm.ChildNotes.indexOf(note)+1].Id).focus();
         }
     }    
 });
