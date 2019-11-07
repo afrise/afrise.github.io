@@ -46,8 +46,16 @@ var vm = new Vue({
         GetParent: function(note){return this.NoteList.filter(function(n){return n.Id==note.ParentId})[0];},
         GetChildren: function(note){return this.NoteList.filter(function(n){return n.ParentId==note.Id});},
         Back: function () {if (this.CurrentNote.Id != 0)this.SetCurrentNote(this.GetParent(this.CurrentNote));},
-        AddNote: function(){this.NoteList.push(new Note(this.CurrentNote.Id));},
-        SetCurrentNote: function(note){this.CurrentNote=note},
+        AddNote: function(){
+            this.NoteList.push(new Note(this.CurrentNote.Id));
+            setTimeout(function(){
+                document.getElementById(vm.ChildNotes[vm.ChildNotes.length-1].Id).focus();
+            },1);
+        },
+        SetCurrentNote: function(note){
+            this.CurrentNote=note;
+            if (this.ChildNotes.length==0) this.AddNote();
+        },
         Save: function() {
             localStorage.model = JSON.stringify({
                 CurrentNote: this.CurrentNote,
@@ -84,6 +92,7 @@ var vm = new Vue({
         ToggleCompleted: function(note) {
             note.Completed=!note.Completed;
             vm.Save();
+            document.getElementById(vm.ChildNotes[vm.ChildNotes.indexOf(note)].Id).focus();
         },
         EnterPressed: function(note){
             if (this.ChildNotes.indexOf(note)==this.ChildNotes.length-1) this.AddNote();
