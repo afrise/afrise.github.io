@@ -34,8 +34,8 @@
                         <a @click="ToggleCompleted(note)"><img class="icon" src="img/accept_1.svg"    /></a>
                     </div>
                     <div class="note text-left">
-                        <input v-if="note.Completed" v-bind:id="note.Id" type="text" class="listItem completed" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()" @keyup.enter="EnterPressed(note)" @keyup.up="UpPressed(note)" @keyup.down="DownPressed(note)"/>
-                        <input v-else type="text" v-bind:id="note.Id" class="listItem" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()" @keyup.enter="EnterPressed(note)" @keyup.up="UpPressed(note)" @keyup.down="DownPressed(note)"/>
+                        <input v-if="note.Completed" v-bind:id="note.Id" type="text" class="listItem completed" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()" @keydown.enter.prevent="EnterPressed(note)" @keydown.up.prevent="UpPressed(note)" @keydown.down.prevent="DownPressed(note)"/>
+                        <input v-else type="text" v-bind:id="note.Id" class="listItem" placeholder="[Add Title]" v-model="note.Title" @keyup="Save()" @keydown.enter.prevent="EnterPressed(note)" @keydown.up.prevent="UpPressed(note)" @keydown.down.prevent="DownPressed(note)"/>
                     </div>
                 </div>
             </div>
