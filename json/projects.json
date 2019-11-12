@@ -1,7 +1,7 @@
 {
 	"projects": [
 		{"name": "Portfolio", "description": "the site you're looking at right now!", "url": "portfolio", "tech": ["html", "css", "js"]},
-		{"name": "NestPad", "description": "A Simple Client-Side only To-do list application. Allows nested to-do lists, and features the abilidy to save and load your lists.", "url": "notes", "tech": ["html", "css", "js"]},
+		{"name": "NestPad", "description": "A Simple Client-Side only To-do list application. Allows nested to-do lists, and features the ability to save and load your lists.", "url": "notes", "tech": ["html", "css", "js"]},
 		{"name": "meer", "description": "android application that sends your current GPS coordinates to a friend using the share api in the form of a google maps link", "url": "meer", "tech":["java"]},
 		{"name": "libGps", "description": "android library written in kotlin to simplify getting gps info and permissions", "url": "libGps", "tech":["kotlin"]},
 		{"name": "ArcadeRcs", "description": "remote interface for home arcede cabinets to choose game to launch at boot", "url": "ArcadeRcs", "tech":["c#"]},
