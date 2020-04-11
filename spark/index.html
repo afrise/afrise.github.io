@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Sparkmaker FHD Bluetooth WebUI</title>
+        <title>SparkUI</title>
         <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
@@ -8,49 +8,55 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script src="https://kit.fontawesome.com/ee098b4ddd.js" crossorigin="anonymous"></script>
+      <link rel="icon" href="https://cdn.glitch.com/c382d1ad-0d46-48e6-beef-ddd27e2d1999%2Ffavicon.ico?v=1586138469323">
     </head>
     <body>
+      <h1 class="header">SparkUI</h1>
         <div class="container content">
-            <h1 class="header">SparkUI</h1>
-            <hr/>
             <div id="Printer" class="card p-3">
                 <div class="status">
                     <div id="printer-img">
                         <div id="printer-top"><br>
-                            <div id="percent" v-if="status=='printing' || status=='paused'">{{percent}}%</div></div>
+                            <div id="percent" v-if="printer.status=='printing' || printer.status=='paused'">{{percent}}%</div>
+                            <div id="ratio" v-if="printer.status=='printing' || printer.status=='paused'">{{file.currentLayer}}/{{file.totalLayers}}</div>
+                        </div>
                         <div id="printer-bottom" class="p-1">
                             <div id = "indicator" :class="color"></div>
                             <div id="sd-slot"></div>
                         </div>
                     </div>
+                    <div>
+                        {{file.selected}}
+                    </div>
+                    <br>
                 </div>
                 <transition name="fade">
                     <div class="mx-auto p-3">
-                        <div type="button" class="btn btn-primary"  v-if="!connected" v-bind:disabled="status=='connecting'" @click="connect">
-                            <i class="fab fa-bluetooth-b"></i> {{connecting ? ' Connecting...' : ' Connect'}} </div>
-                        <div v-if="connected" class="p-1">
-                            <div type="button" class="btn  btn-success" v-if="status=='standby'"  @click="start">Start Printing</div>
-                            <div type="button" class="btn btn-danger"   v-if="status=='printing'" @click="stop">Stop Printing</div>
-                            <div type="button" class="btn btn-primary"  v-if="status=='printing' || status=='paused'"  @click="pause">{{status=="printing" ? 'Pause' : 'Resume'}}</div>
-                            <div type="button" class="btn btn-secondary" @click="showFiles=!showFiles">Select File</div>
-                            <div type="button" class="btn btn-outline-secondary" @click="showAdvanced = !showAdvanced">
+                        <div type="button" class="btn btn-primary"  v-if="!bluetooth.connected" v-bind:disabled="printer.status=='connecting'" @click="connect">
+                            <i class="fab fa-bluetooth-b"></i> {{bluetooth.connecting ? ' Connecting...' : ' Connect'}} </div>
+                        <div v-if="bluetooth.connected" class="p-1">
+                            <div type="button" class="btn  btn-success" v-if="printer.status=='standby'"  @click="start">Start Printing</div>
+                            <div type="button" class="btn btn-danger"   v-if="printer.status=='printing'" @click="stop">Stop Printing</div>
+                            <div type="button" class="btn btn-outline-light"  v-if="printer.status=='printing' || printer.status=='paused'"  @click="pause">{{printer.status=="printing" ? 'Pause' : 'Resume'}}</div>
+                            <div type="button" class="btn btn-outline-light" @click="ui.showFiles=!ui.showFiles">Select File</div>
+                            <div type="button" class="btn btn-outline-light" @click="ui.showAdvanced = !ui.showAdvanced">
                                 Advanced 
-                                <i v-if="!showAdvanced" class="fas fa-angle-down"></i>
-                                <i v-if="showAdvanced" class="fas fa-angle-up"></i>
+                                <i v-if="!ui.showAdvanced" class="fas fa-angle-down"></i>
+                                <i v-if="ui.showAdvanced" class="fas fa-angle-up"></i>
                             </div>
                         </div>
-                        <div v-if="showAdvanced" class="p-1">
-                            <div type="button" class="btn btn-secondary" @click="clean">Clean</div>
-                            <div type="button" class="btn btn-secondary" @click="display">Display</div>
-                            <div type="button" class="btn btn-secondary" @click="emergency">Emergency</div>
-                            <div type="button" class="btn btn-secondary" @click="fReturn">Return</div>
+                        <div v-if="ui.showAdvanced" class="p-1">
+                            <div type="button" class="btn btn-outline-light" @click="clean">Clean</div>
+                            <div type="button" class="btn btn-outline-light" @click="display">Display</div>
+                            <div type="button" class="btn btn-outline-light" @click="emergency">Emergency</div>
+                            <div type="button" class="btn btn-outline-light" @click="fReturn">Return</div>
                         </div>
                     </div>
                 </transition>
-                <div class="container" v-if="showFiles">
+                <div class="container" v-if="ui.showFiles">
                     Files:
                     <ul>
-                        <li @click="setFile(file.id)" v-for="file in files">{{file.name}}</li>
+                        <li @click="setFile(file.id)" v-for="file in file.list">{{file.name}}</li>
                     </ul>
                 </div>
             </div> 

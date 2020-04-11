@@ -2,22 +2,28 @@ body {
     margin: 0; 
     font-family: 'Nunito', sans-serif;
     padding: 15px;
-    background: linear-gradient(38deg, rgba(200,20,20,1) 0%, rgba(100,10,10,1) 100%);
+    background-image: linear-gradient( 135deg, #3B2667 10%, #BC78EC 100%);
 }
 
+.header{
+    color: #FFFB
+}
 .content {
     background-color: white;
     padding:30px
 }
 #percent {
-    text-shadow: -5px 2px 5px #0005;
-    
+    text-shadow: -5px 2px 5px #0005;   
 }
 
-,header{
-    color: #FFFB
+#ratio {
+    text-shadow: -5px 2px 5px #0005;   
+    font-size: 25px
 }
+.card {
+  background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
 
+}
 #Printer {
     transition: height, 3s ease-in-out
 }
@@ -27,8 +33,9 @@ body {
     border-top-left-radius: 50% 5%;
     border-bottom-right-radius: 50% 5%; 
     border-bottom-left-radius: 50% 5%;
-    background: linear-gradient(90deg, rgba(50,50,50,1) 0%, rgba(10,10,10,1) 100%);
-    margin: 100px auto;
+    border-bottom: 1px solid #000;
+    background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(99,99,99,1) 65%, rgba(89,89,89,1) 95%, rgba(8,8,8,1) 100%);
+    margin: 20px auto;
     height:250px;
     width:150px;
     animation: fadeIn 2s;
@@ -38,9 +45,11 @@ body {
 .fade-enter-active, .fade-leave-active {
     transition: opacity 2s;
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  .fade-enter, .fade-leave-to {
     opacity: 0;
   }
+
+.btn {border-radius: 20px;padding: .5rem 2rem;}
 
 #printer-top {
     height:200px;
@@ -50,7 +59,8 @@ body {
     border-top-left-radius: 50% 5%;
     border-bottom-right-radius: 50% 5%; 
     border-bottom-left-radius: 50% 5%;
-    background: linear-gradient(90deg, rgba(100,10,10,1) 0%, rgba(200,20,20,1) 100%);
+    border-top: 1px solid rgb(150,20,20);
+    background: linear-gradient(90deg, rgba(102,17,17,1) 0%, rgba(171,38,38,1) 63%, rgba(212,103,103,1) 65%, rgba(200,78,78,1) 67%, rgba(255,136,136,1) 93%, rgba(247,23,23,1) 99%, rgba(112,26,26,1) 100%);
     text-align: center;
 }
 
@@ -66,10 +76,8 @@ body {
 .btn {animation: fadeIn 1s}
 
 @keyframes glow {50% {border-color:#000}}
-
 @keyframes fadeOut {100% {opacity: 0}}
 @keyframes fadeIn {0% {opacity: 0}}
-
 
 #sd-slot {
     height:5px; 
@@ -78,7 +86,7 @@ body {
     margin: 8px auto;
 }
 
-.status {display: flex;}
+.status {text-align:center;}
 .red    {border-color: red !important; }
 .blue   {border-color: blue !important; }
 .green  {border-color: green !important;}
