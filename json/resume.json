@@ -11,13 +11,20 @@
         "Communicating with clients and coworkers to ensure effective delivery of product"],
         "educations": [{"school": "J Sargeant Reynolds", "major": "Computer Science", "tenure": "2005-2008"}],
     "experiences": [
+         {"name": "Mapcom Systems by VertiGIS", 
+            "title": "Software Developer", 
+            "location": "Richmond, VA",
+            "tenure": "03/2020 - Present", 
+            "responsibilities": [
+                "develop enhanced integration with external data systems", 
+                "work remotely with a team in a constantly shifiting environment",
+                "maintain code in many facets of complex geospatial mapping software"
+            ]},
         {"name": "Computer Resource Company", 
             "title": "Software Developer", 
             "location": "Richmond, VA",
             "tenure": "01/2018 - 06/2019", 
             "responsibilities": [
-                "Lead developer on one of the most important products at the company", 
-                "Involved in all stages of deployment",
                 "Designed and implemented internal tooling and libraries",
                 "Refactored legacy code adding transparency and maintainability",
                 "Enhanced user experience by streamlining user workflow"
