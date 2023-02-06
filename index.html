@@ -39,8 +39,15 @@
                     <div id="projects">
                         <div class="card-columns" >
                             <div class="card"  v-for="project in projects">        
-                                <div class="card-body"><h5 class="card-title">{{project.name}}</h5><p class="card-text">{{project.description}}</p><span class="badge" v-for="tech in project.tech">{{tech}}</span></div>
-                                <div class="card-footer text-center"><a v-bind:href="'http://github.com/afrise/'+project.url" class="btn btn-primary">view on github</a></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{project.name}}</h5>
+                                    <p class="card-text">{{project.description}}</p>
+                                    <span class="badge" v-for="tech in project.tech">{{tech}}</span>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a v-bind:href="'http://github.com/afrise/'+project.url" class="btn btn-primary">view on github</a>
+                                    <a v-bind:href="project.liveUrl" v-if="project.hasLive" class="btn btn-primary">{{project.liveText}}</a> 
+                                </div>
                             </div>
                         </div>
                     </div>
