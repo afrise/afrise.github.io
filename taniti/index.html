@@ -1,0 +1,251 @@
+<html>
+    <head>
+        <title>Welcome To Taniti</title>
+        <style>
+            @font-face {
+                font-family: olivera;
+                src: url(Olivera.ttf);
+            }
+            @font-face {
+                font-family: seminyak;
+                src: url(Seminyak.ttf);
+            }
+            h1 {
+                font-family: seminyak, cursive;
+                text-align: center;
+                font-size: 70pt;
+                padding: 100px;
+                margin:0;
+            }
+            h2 {
+                font-family: seminyak, cursive;
+                text-align: center;
+                font-size: 36pt;
+                padding-top:100px
+            }
+            a {
+                text-decoration: none;
+                color:steelblue;
+            }
+            body {
+                position: absolute;
+                margin: 0;
+                width: 100%;
+                font-family: olivera, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:teal;
+                font-size:22pt;
+                line-height: 180%;
+                text-shadow: 1px 1px 2px #00000055;
+                background-size: cover;
+            }
+            .body {
+                margin: 0 auto;
+                max-width:1200px;
+                width: 80%;
+            }
+            img {
+                max-width:100%;
+                border-radius: 5px;
+            }
+            .bg {
+                padding:0;
+                margin: 0;
+                background-image: url("./vlad-d-mSzOPosLruw-unsplash.jpg"); /* Photo by Vlad D: https://unsplash.com/photos/a-sandy-beach-with-clear-blue-water-under-a-partly-cloudy-sky-mSzOPosLruw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash */
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: fixed;
+                width:100vw;
+                height:100vh;
+            }
+            .photo-credit {
+                margin-top: 5px;
+                text-align: center;
+                font-size: smaller;
+                
+            }
+            .image {
+                background: #00000010;
+                margin: 15px;
+                border-radius: 5px;
+            }
+            .content{
+                background: #ffffff60;
+                padding:50px;
+                backdrop-filter: blur(10px);
+              
+            }
+            .header{
+                background: #bdd;
+                backdrop-filter: blur(10px);
+           
+            }
+            footer{
+                text-align: center;  
+            
+            }
+            .nav {
+                background: #bdd;
+                display: flex;
+                position:sticky;
+                height: 60px;
+                margin:0;
+            
+                z-index: 9999;
+                text-align: center;
+             
+            }
+            .nav-item a{
+                color:teal;
+            }
+            .nav-item:hover a {
+                color:white
+            }
+            .nav-item{
+                float:left;
+                flex:1;
+                padding:5px;
+            }
+            .static {
+                position:sticky;
+                width: 100%;
+                top:0;
+            }
+            .static + .content {
+                padding-top:60px;
+            }
+            .callToAction {
+                padding:50px;
+                color:black;
+                text-align: center;
+                background-color: #5ddddb99;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <div class="bg"></div>
+    <body>
+        <div class="body">
+            <div class="header">
+                <h1>Welcome To Taniti</h1>
+            </div>
+            <div class="nav" id="nav">
+                <div class="nav-item"><a href="#about">About</a></div>
+                <div class="nav-item"><a href="#accommodations">Accommodations</a></div>
+                <div class="nav-item"><a href="#entertainment">Entertainment</a></div>
+                <div class="nav-item"><a href="#adventure">Adventure</a></div>
+                <div class="nav-item"><a href="#faq">FAQ</a></div>
+            </div>
+            <div class="content">
+                <h2 id="about">About the island</h2>
+                <div class="image">
+                    <image alt="" src="./fernando-jorge-jyQyG7DGDAo-unsplash.jpg"/>
+                    <div class="photo-credit">
+                        Photo by <a href="https://unsplash.com/@fx24?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Fernando Jorge</a> on <a href="https://unsplash.com/photos/white-cruise-ship-docked-beside-port-jyQyG7DGDAo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                    </div>
+                </div>
+                <p>
+                    Small island, big personality! Weighing in at just under 500 square miles, 
+                    Taniti is packed to the brim with culture and adventure! From the sandy 
+                    beaches of Yellow Leaf Bay to the peak of our own active volcano, you'll 
+                    be sure to find something that caters to your interest. Continue reading 
+                    to see what Taniti has to offer! 
+                </p>
+                <p>
+                    <h2 id="accommodations">Accommodations</h2>
+                    <div class="image">
+                        <image alt="" src="./zac-gudakov-KGTGpCAVgCM-unsplash.jpg"/>
+                        <div class="photo-credit">
+                            Photo by <a href="https://unsplash.com/@zacgudakov?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Zac Gudakov</a> on <a href="https://unsplash.com/photos/white-sand-beach-near-city-buildings-during-daytime-KGTGpCAVgCM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                        </div>
+                    </div>
+                    Taniti has many places for you to stay, from the surprisingly affordable 
+                    hostel to our own world-class 4 star resort. Want a more personal 
+                    experience? Reserve a stay in any of our growing number of bed and 
+                    breakfasts! All lodging on the island is subject to stringent regulations, 
+                    and we perform regular inspections, so you can sleep soundly knowing that 
+                    you will be safe from harm.
+                </p>
+                <p>
+                    <h2 id="entertainment">Entertainment</h2>
+                    <div class="image">
+                        <image alt="" src="./nereid-ndreu-2Px5vBM2wqI-unsplash.jpg"/>
+                        <div class="photo-credit">
+                            Photo by <a href="https://unsplash.com/@nereiq?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nereid Ndreu</a> on <a href="https://unsplash.com/photos/a-group-of-women-standing-next-to-each-other-holding-drinks-2Px5vBM2wqI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                        </div>
+                    </div>
+                    When staying in Merriton Landing, you'll have access to enough activities 
+                    to keep you busy for your entire trip! We have family friendly venues like 
+                    our bowling alley, an arcade featuring classic arcade games and pinball 
+                    machines, movie theater, an art gallery and local history museum, as well 
+                    as snorkeling, helicopter rides,  fishing tours, and a rain forest zip line 
+                    with incredible views for the more adventurous types. Adults over 18 can 
+                    enjoy a drink at one of our bars, dance the night away at the new dance 
+                    club, or visit our own micrbrewery for some locally made IPA goodness. 
+                    (<i>please note: alcohol sales end at midnight</i>)
+                </p>
+                <p>
+                    <h2 id="adventure"> Adventure Awaits</h2>
+                    <div class="image">
+                        <image alt="" src="./jeremy-bishop-B6gaRFdbnp8-unsplash.jpg"/>
+                        <div class="photo-credit">
+                            Photo by <a href="https://unsplash.com/@jeremybishop?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jeremy Bishop</a> on <a href="https://unsplash.com/photos/woman-wearing-black-dress-between-green-leaf-plants-B6gaRFdbnp8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <image alt="" src="./geoff-oliver-nNIWDveBH-k-unsplash.jpg"/>
+                        <div class="photo-credit">
+                            Photo by <a href="https://unsplash.com/@satsuma9?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Geoff Oliver</a> on <a href="https://unsplash.com/photos/a-view-of-a-city-with-a-mountain-in-the-background-nNIWDveBH-k?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                        </div>
+                    </div>
+                    Although there's enough to do in Taniti City alone, a trip to the island 
+                    wouldn't be complete without visiting the tropical rain forest on one of our 
+                    guided expeditions, where you can learn about all the unique flora and fauna 
+                    native to the island, or a boat tour exploring the coasts and learning about 
+                    the features of the island created by historic volcanic activity. You can 
+                    even hike the active volcano, provided the conditions are safe!
+                </p>
+    
+                <h2 id="faq">Frequently Asked Questions</h2>
+                
+                <p>
+                    <b>Will I need to exchange my currency?</b><br>
+                    Taniti uses the US Dollar, so Americans or citizens of other countries that 
+                    also use the USD will have no issue using their money. Many businesses also 
+                    accept the Euro and Yen, so visitors from Europe and Japan will likely be 
+                    able to use cash as well. Visitors from other countries can get their money 
+                    changed at many of the local banks, or use credit cards at most businesses.
+                </p>
+                <p>
+                    <b>Will I need a converter for my electronics?</b><br>
+                    Taniti uses the same outlets as the United States, at 120 volts. If your 
+                    electronics use a different connection, you may want to bring a converter, or 
+                    buy a charger locally at one of our supermarkets
+                </p>
+                <p>
+                    <b>Is it safe?</b><br>
+                    As with any tourist destination, you should always be aware of your surroundings, 
+                    as pickpocketing can be an issue, but no more than any other location! Taniti is 
+                    quite safe overall, and consistently rankes as one of the safest destinations in the world!
+                </p>
+                <br>
+                <div class="callToAction">
+                    Ready to book your adventure in the hidden paradise of Taniti? Don't wait! <a href="mailto:noreply@taniti.com">Contact Us</a> to 
+                    reserve your accommodations and plan your escape today!
+                </div>
+                <br><br><br><br>
+                <footer>
+                    &copy 2024 Allen Frise
+                </footer>
+            </div>
+            <script>
+                var nav = document.getElementById("nav");
+                navTop = nav.offsetTop;
+                window.onscroll = function(){
+                    if (window.pageYOffset>= navTop) nav.classList.add("static")
+                    else nav.classList.remove("static");
+               }
+            </script>
+       
+        </div>
+    </body>    
+</html>
