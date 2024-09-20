@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>oChat</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <div id="settings-menu">
+                <div>
+                    <button id="settings-button" onclick="toggleSettings()">
+                        <!-- the almighty burger -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                        </svg> 
+                    </button>
+                </div>  
+            </div>
+            <div id="settings-content">
+                <div class="segment">
+                    <div class="label">OpenAI API Endpoint:</div>
+                    <div>
+                        <input type="text" onkeyup="checkModels()" id="endpoint-input" placeholder="API Endpoint">
+                    </div>
+                    <div class="label">Select Model:</div>
+                    <div>
+                        <select id="model-select"></select>
+                    </div>
+                    <div class="label">
+                        <button onclick="saveSettings()">Save</button> 
+                    </div>
+                </div>
+                <div class="segment">
+                    <div class="label">
+                        Chats:
+                    </div>
+                    <div>
+                        <select id="chats" onclick="selectChat()" size="0"></select>
+                    </div>
+                    <div>
+                        <button onclick="addChat()">add</button>
+                        <button onclick="deleteChat()">delete</button>
+                    </div>
+                </div>
+            </div>
+            <div id="title"><input type="text" id="chat-title" value="oChat" onkeyup="renameChat()"></input></div>
+        </div>
+        <div id="chat-container"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type your message...">
+        </div>
+        <script src="chat.js"></script>
+    </body>
+</html>
