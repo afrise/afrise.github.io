@@ -3,48 +3,38 @@
     position: relative;
     top: -100px;
 }
-.contactIcon {
-    width: 64px;
-    height: 64px;
-    fill: white;
-    margin:5px;
-    border-radius:3px;
-    content-align: center;
+
+/* Enhanced modern styling with gradients */
+body {
+    background: linear-gradient(135deg, #1a2f3f, #2c4c5f);
+    color: #f5f5f5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
 }
 
-.contactIcon:hover{
-    background: #fff3;
-}
-
-.svg{
-    fill: white;
-    width:64px;
-    height:64px;
-    margin:2px;
-}
-
-
-.LinkedIn:hover{fill: #2867B2;}
-.Gmail:hover{fill:#DB4437;}
-.Facebook:hover{fill:#4267B2;}
-
-.navbar {background:darkslategray}
-.card {
-    box-shadow: 5px 5px 5px #0002;
-    border-color: #444;
-    background-color: #ccc8;
-    color: #0009
+.navbar {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 .jumbotron {
-    background-color: #eee4;
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 5px 5px 25px #0002;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.jumbotron:hover {
+    transform: translateY(-5px);
 }
 
 .jumbotron a {
-    color: lightgray
+    color: lightgray;
 }
 
 .title {
@@ -52,30 +42,79 @@
     font-size: 6vw;
     text-align: right;
     padding: 30px;
-    text-shadow: 8px 8px 10px #0002
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, #e6e6e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 8px 8px 10px #0002;
 }
 
 .subtitle {
-    font-size: 2vw
+    font-size: 2vw;
 }
 
-@media (max-width: 775px) {
-    .title {font-size: 36pt}
-    .subtitle {font-size: 24pt}
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    color: #0009;
 }
 
-body {
-    background: darkslategray;
-    color: white
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-a {color:lightslategray}
 
 .btn-primary {
-    background-color: slategray;
-    border-color: darkslategray;
+    background: linear-gradient(45deg, #4a90e2, #357abd);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: darkslategray;
-    border-color: black
+    background: linear-gradient(45deg, #357abd, #2d6da3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contactIcon {
+    width: 64px;
+    height: 64px;
+    fill: white;
+    margin: 5px;
+    border-radius: 3px;
+    content-align: center;
+    transition: all 0.3s ease;
+}
+
+.contactIcon:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.svg {
+    fill: white;
+    width: 64px;
+    height: 64px;
+    margin: 2px;
+}
+
+.LinkedIn:hover { fill: #2867B2; }
+.Gmail:hover { fill: #DB4437; }
+.Facebook:hover { fill: #4267B2; }
+
+a { color: lightslategray; }
+
+@media (max-width: 775px) {
+    .title { font-size: 36pt; }
+    .subtitle { font-size: 24pt; }
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
