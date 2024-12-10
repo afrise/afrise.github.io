@@ -2,88 +2,90 @@
 	"projects": [
 		{
 			"name": "Portfolio", 
-			"description": "the site you're looking at right now!", 
+			"description": "A responsive personal portfolio website built with modern web technologies.",
 			"url": "portfolio", 
-			"tech": ["html", "css", "js"],
+			"tech": ["HTML", "CSS", "JavaScript"],
 			"hasLive": "true",
 			"liveUrl": "#", 
 			"liveText": "GO"
 		},
 		{
 			"name": "SparkUI", 
-			"description": "web based interface for the SparkMaker FHD 3D printer", 
+			"description": "A web-based interface developed for the SparkMaker FHD 3D printer, enabling remote control and monitoring capabilities.",
 			"url": "spark", 
-			"tech": ["html", "css", "js", "bt"],
+			"tech": ["HTML", "CSS", "JavaScript", "Bluetooth"],
 			"hasLive": "true",
 			"liveUrl": "spark", 
 			"liveText": "See Live"
 		},
 		{
 			"name": "NestPad", 
-			"description": "A Simple Client-Side only To-do list application. Allows nested to-do lists, and features the ability to save and load your lists.", 
+			"description": "A client-side to-do list application featuring nested task organization with local storage capabilities for list persistence.",
 			"url": "notes", 
-			"tech": ["html", "css", "js"],
+			"tech": ["HTML", "CSS", "JavaScript"],
 			"hasLive": "true",
 			"liveUrl": "notes", 
 			"liveText": "See Live"
 		},
 		{
-			"name": "meer", "description": "android application that sends your current GPS coordinates to a friend using the share api in the form of a google maps link", 
-			"url": "meer", 
-			"tech":["java"],
+			"name": "Meer",
+			"description": "An Android application that simplifies location sharing by converting GPS coordinates into shareable Google Maps links.",
+			"url": "meer",
+			"tech": ["Java"],
 			"hasLive": "false",
 			"liveUrl": "/", 
 			"liveText": "..."
 		},
 		{
-			"name": "libGps", "description": "android library written in kotlin to simplify getting gps info and permissions", 
-			"url": "libGps", 
-			"tech":["kotlin"],
+			"name": "LibGPS",
+			"description": "A Kotlin-based Android library that streamlines GPS functionality and permission handling for developers.",
+			"url": "libGps",
+			"tech": ["Kotlin"],
 			"hasLive": "false",
 			"liveUrl": "/", 
 			"liveText": "..."
 		},
 		{
-			"name": "ArcadeRcs", 
-			"description": "remote interface for home arcede cabinets to choose game to launch at boot", 
+			"name": "ArcadeRCS",
+			"description": "A remote control system for home arcade cabinets that manages game selection and boot sequences.",
 			"url": "ArcadeRcs", 
-			"tech":["c#"],
+			"tech": ["C#"],
 			"hasLive": "false",
 			"liveUrl": "/", 
 			"liveText": "..."
 		},
 		{
 			"name": "IIDXCon", 
-			"description": "arduino software to emulate specialized input hardware", 
+			"description": "An Arduino-based solution that emulates specialized gaming input hardware through custom firmware.",
 			"url": "iidxcon", 
-			"tech":["c++", "arduino"],
+			"tech": ["C++", "Arduino"],
 			"hasLive": "false",
 			"liveUrl": "/", 
 			"liveText": "..."
 		},
 		{
 			"name": "BitPocket", 
-			"description": "generates bitcoin addresses then checks their balance.", 
+			"description": "A Kotlin application that generates and monitors Bitcoin wallet addresses for balance changes.",
 			"url": "bitpocket", 
-			"tech":["kotlin"],
+			"tech": ["Kotlin"],
 			"hasLive": "false",
 			"liveUrl": "/", 
 			"liveText": "..."
 		},
 		{
 			"name": "Road Fighters 3D Shader", 
-			"description": "shader written for ReShade to convert from interlaced to Red/Cyan 3D", 
+			"description": "A custom ReShade shader that converts interlaced video output to Red/Cyan 3D format.",
 			"url": "road-fighters-3d-shader", 
-			"tech":["ReShade"],
+			"tech": ["ReShade"],
 			"hasLive": "false",
 			"liveUrl": "/", 
 			"liveText": "..."
 		},
 		{
 			"name": "TegraAutoSmash", 
-			"description": "homebrew utility for nintendo switch that automatically injects payload upon connection to pc", 
+			"description": "A Nintendo Switch homebrew utility that automates payload injection upon PC connection.",
 			"url": "tegraautosmash", 
-			"tech":["c#"],
+			"tech": ["C#"],
 			"hasLive": "false",
 			"liveUrl": "/", 
 			"liveText": "..."
