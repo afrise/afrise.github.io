@@ -1,30 +1,39 @@
 {
 	"projects": [
 		{
-			"name": "Portfolio", 
+			"name": "MCPSharp",
+			"description": "A C# library for managing Minecraft server plugins.",
+			"url": "mcpsharp",
+			"tech": ["C#", ".NET"],
+			"hasLive": "false",
+			"liveUrl": "/",
+			"liveText": "..."
+		},
+		{
+			"name": "Portfolio",
 			"description": "A responsive personal portfolio website built with modern web technologies.",
-			"url": "portfolio", 
+			"url": "portfolio",
 			"tech": ["HTML", "CSS", "JavaScript"],
 			"hasLive": "true",
-			"liveUrl": "#", 
+			"liveUrl": "#",
 			"liveText": "GO"
 		},
 		{
-			"name": "SparkUI", 
+			"name": "SparkUI",
 			"description": "A web-based interface developed for the SparkMaker FHD 3D printer, enabling remote control and monitoring capabilities.",
-			"url": "spark", 
+			"url": "spark",
 			"tech": ["HTML", "CSS", "JavaScript", "Bluetooth"],
 			"hasLive": "true",
-			"liveUrl": "spark", 
+			"liveUrl": "spark",
 			"liveText": "See Live"
 		},
 		{
-			"name": "NestPad", 
+			"name": "NestPad",
 			"description": "A client-side to-do list application featuring nested task organization with local storage capabilities for list persistence.",
-			"url": "notes", 
+			"url": "notes",
 			"tech": ["HTML", "CSS", "JavaScript"],
 			"hasLive": "true",
-			"liveUrl": "notes", 
+			"liveUrl": "notes",
 			"liveText": "See Live"
 		},
 		{
@@ -33,7 +42,7 @@
 			"url": "meer",
 			"tech": ["Java"],
 			"hasLive": "false",
-			"liveUrl": "/", 
+			"liveUrl": "/",
 			"liveText": "..."
 		},
 		{
@@ -42,52 +51,52 @@
 			"url": "libGps",
 			"tech": ["Kotlin"],
 			"hasLive": "false",
-			"liveUrl": "/", 
+			"liveUrl": "/",
 			"liveText": "..."
 		},
 		{
 			"name": "ArcadeRCS",
 			"description": "A remote control system for home arcade cabinets that manages game selection and boot sequences.",
-			"url": "ArcadeRcs", 
+			"url": "ArcadeRcs",
 			"tech": ["C#"],
 			"hasLive": "false",
-			"liveUrl": "/", 
+			"liveUrl": "/",
 			"liveText": "..."
 		},
 		{
-			"name": "IIDXCon", 
+			"name": "IIDXCon",
 			"description": "An Arduino-based solution that emulates specialized gaming input hardware through custom firmware.",
-			"url": "iidxcon", 
+			"url": "iidxcon",
 			"tech": ["C++", "Arduino"],
 			"hasLive": "false",
-			"liveUrl": "/", 
+			"liveUrl": "/",
 			"liveText": "..."
 		},
 		{
-			"name": "BitPocket", 
+			"name": "BitPocket",
 			"description": "A Kotlin application that generates and monitors Bitcoin wallet addresses for balance changes.",
-			"url": "bitpocket", 
+			"url": "bitpocket",
 			"tech": ["Kotlin"],
 			"hasLive": "false",
-			"liveUrl": "/", 
+			"liveUrl": "/",
 			"liveText": "..."
 		},
 		{
-			"name": "Road Fighters 3D Shader", 
+			"name": "Road Fighters 3D Shader",
 			"description": "A custom ReShade shader that converts interlaced video output to Red/Cyan 3D format.",
-			"url": "road-fighters-3d-shader", 
+			"url": "road-fighters-3d-shader",
 			"tech": ["ReShade"],
 			"hasLive": "false",
-			"liveUrl": "/", 
+			"liveUrl": "/",
 			"liveText": "..."
 		},
 		{
-			"name": "TegraAutoSmash", 
+			"name": "TegraAutoSmash",
 			"description": "A Nintendo Switch homebrew utility that automates payload injection upon PC connection.",
-			"url": "tegraautosmash", 
+			"url": "tegraautosmash",
 			"tech": ["C#"],
 			"hasLive": "false",
-			"liveUrl": "/", 
+			"liveUrl": "/",
 			"liveText": "..."
 		}
 	]
