@@ -2,7 +2,7 @@
 	"projects": [
 		{
 			"name": "MCPSharp",
-			"description": "A C# library for managing Minecraft server plugins.",
+			"description": "A C# library for building model context protocol servers and clients. ",
 			"url": "mcpsharp",
 			"tech": ["C#", ".NET"],
 			"hasLive": "false",
